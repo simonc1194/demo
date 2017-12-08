@@ -1,0 +1,45 @@
+CS349 A1 Marking Scheme
+Marker: Bahareh Sarrafzadeh - bsarrafz@uwaterloo.ca
+
+Marks in [] are the total marks for an item.
+
+[2/2] Create a 800 x 400 window, draw text showing the current score from the Simon game object (initially 0) and a message (initially “Press SPACE to play”).
+
+[2/2] Pressing ‘q’ exits the program.
+
+[2/2] Draw N circular “buttons” (100 px diameter), where N is a number from 1 to 6 passed on the command line. Each button should be white with black 1 pixel outline, and have text inside showing the number 1 to N inside. For example: ./a1-basic 4 draws 4 buttons, ./a1-basic 6 draws 6 buttons.
+
+[2/2] The N buttons are in a horizontal row spanning the whole width of the window, and the row is vertically centred in the window. The horizontal space between each button, and the space between the end buttons and the window border, are the same.
+
+[2/2] Detect when a ConfigureNotify (i.e. resize window) event occurs, and reposition the row of buttons so it’s centred and evenly spaced in the new window size, just like the previous bullet. Don’t worry if the window is scaled small enough for the buttons overlap, or intersect with the text.
+
+[1/2] Using the MotionNotify event, highlight each button when the mouse cursor is inside it. The highlight must be a 4 px thick outline. To detect if a point is inside a circle, find the distance from the centre of the circle to the point and see if this is more than the circle radius.
+
+Highlight doesn’t hold while the mouse curser is still inside the circle;
+Also, it’s a flickering outline which is not a 4 px black circle.
+
+[2/2] Using the ButtonPress event, highlight when the mouse clicks inside a Simon button. The animation must be: the button turns black, the number text disappears, and a white ring animates from the outside of the circle to the centre. The animation should take about half of a second (about 30 frames if your animation loop is running at 60 FPS). See the video.
+
+[2/2] When SPACE is pressed, the message text changes to “Watch what I do …”.
+
+[2/2] Also when SPACE is pressed, the sequence of buttons is “played” one by one. Each button should highlight for about half a second, and there should be a short time gap between highlighting (I used a quarter of a second).
+
+[2/2] When the sequence is done “playing”, the message changes to “Now it’s your turn”.
+
+[2/2] If the user clicks on the buttons in the same sequence, they win, and a message “You won! Press SPACE to continue” is displayed.
+
+[2/2] If the user clicks on a wrong button, they lose, and the message “You lose. Press SPACE to play again” is displayed.
+
+[2/2] This cycle of winning or losing can continue as long the user wants. The score is correctly displayed, the sequence increases in length by 1 when they win or reset to 1 if they lose, etc.
+
+[0/2] For some extra flair, add an “attract animation” any time the game is waiting for the user to press SPACE. Do this by animating the buttons up and down using a sin function. See the demo video.
+
+No flair is implemented
+
+[2/2] Use Displayables and a display list for all your shapes.
+
+[0/2] Enhancement, the functionality should be described in the enhanced version, at the top of the code.
+
+No enhancements.
+
+[5/5] The program performance is acceptable (does not run slowly or with low FPS, CPU efficient), code is reasonably formatted and structured.

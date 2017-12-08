@@ -1,0 +1,56 @@
+# CS349 A2 
+Student: s299chen
+Marker: Nikhita Joshi
+
+
+Total: 34 / 41 (82.93%)
+
+
+
+Code: 
+(CO: won’t compile, CR: crashes, FR: UI freezes/unresponsive, NS: not submitted)
+
+
+Notes:   
+
+## REQUIREMENTS
+
+1. [2/2] The main window is 800 x 600 pixels with a fixed height “toolbar” spanning the top and a fixed height “statusbar” spanning the bottom. The rest of the space is a drawing “canvas” that can vary in size if the window is resized.
+
+2. [2/2] In the toolbar, there is a “Delete” button and two sliders. Each slider has a label on the left and a number showing the current value at right. The first is labelled “Scale”, it can range from 0.5 to 2.0 with a default value of 1.0. The second is labelled “Rotate”, it can range from -180 to 180 and it defaults to 0. The button and sliders should be left aligned in the toolbar.
+
+3. [2/2] When the sliders are manipulated, the number at right changes to match the slider.
+
+4. [2/2] Dragging on the canvas draws a 2-pixel thick stroke. Multiple strokes can be added to the canvas. All strokes are stored in the DrawingModel.
+
+5. [2/2] The statusbar displays the number of strokes in the canvas, like this “0 Strokes”, “1 Stroke”, “2 Strokes”, etc.
+
+6. [2/2] Clicking (not dragging) within 5 pixels of a stroke selects it. The selected stroke is highlighted with a thick yellow line.
+
+7. [2/2] If more than one stroke is within 5 pixels, only the top-most stroke is selected. Only one stroke is selected at one time. Clicking on a point in the canvas more than 5 pixels away from all strokes means no stroke is currently selected.
+
+8. [2/2] Clicking on the “Delete” button deletes the selected stroke.
+
+9. [2/2] The scale of the selected stroke can be changed using the “Scale” slider. The new scale should remain applied to the stroke after it is deselected. All strokes can be scaled independently.
+
+10. [2/2] The rotation of the selected stroke can be changed using “Rotate” slider. The new rotation should remain applied to the stroke after it is deselected. All strokes can be rotated independently.
+
+11. [2/2] The toolbar button and sliders should be “greyed out” (inactive) when no stroke is selected.
+
+12. [2/2] When a stroke is selected, the status bar shows information about it after the stroke count like this: “X Strokes, Selection (45 points, scale: 1.3, rotation -45)”. The scale and rotation should update if the sliders are used, and the information about the selected stroke should disappear when deselected or deleted.
+
+13. [2/2] Strokes can never be scaled to be less than 0.5 or more than 2.0 of their initial drawn scale. Strokes can never be rotated less than -180 or more than 180 from their initial drawn orientation.
+
+14. [2/2] The initial value for the scale and rotation sliders should match the amount of scale and rotation for the currently selected stroke. This should come from the selected stroke in DrawingModel.
+
+15. [2/2] The scale and rotation transformation is relative to the center of the untransformed bounding box of the stroke.
+
+16. [2/2] A selected stroke can be moved (i.e. translated) by clicking down and dragging to a new position. The stroke position should not “jump” when starting or ending the drag.
+
+17. [0/2] When the window is resized smaller than the area needed to display all the strokes, scrollbars should appear.
+-2 not implemented
+
+## ENHANCEMENT [0/2]
+
+## GENERAL [2/5] (can be negative)
+-3 for lack of comments

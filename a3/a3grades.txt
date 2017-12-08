@@ -1,0 +1,64 @@
+# CS349 A3
+Student: s299chen
+Marker: Jeremy Hartmann
+
+
+Total: 34 / 37 (91.89%)
+
+Code:
+(CO: won’t compile, CR: crashes, FR: UI freezes/unresponsive, NS: not submitted)
+
+
+Notes:   
+
+## REQUIREMENTS
+
+1. [2/2] In EditView, there’s an red 40 by 10 “landing pad” with it’s upper-left corner initially at (330, 100) inside a light grey “world” that is 700 by 200. The landing pad can be repositioned with a double-click: the centre of the landing pad jumps to the double-click location.
+
+
+2. [2/2] The landing pad can also be dragged to a new location using the mouse. The mouse button must be pressed while the cursor is inside the landing pad to start a drag. Make sure the landing pad doesn’t “jump” when the drag action starts or ends.
+
+
+3. [2/2] The “terrain” is a dark grey polygon the width of worldBounds that with 20 peaks (or valleys) evenly placed horizontally across the width. Initially the height of peak is randomized to be roughly in the lower half of the game world. Each peak has a light grey circle around it (radius 15 pixels).
+
+
+4. [2/2] Each peak can be dragged up and down with the mouse (only the y-coordinate changes). The mouse button must be pressed while the cursor is inside the circle to start a drag. Make sure the circle doesn’t “jump” when the drag action starts or ends.
+
+
+5. [1/2] The landing pad can never be dragged or repositioned outside of the game world. It can be dragged over top of the terrain, or through the terrain. The centre of a circle (i.e. the peak) cannot be dragged outside the game world. It can be dragged behind the landing pad.
+
+-1 MVC: coordinates constrained in the view not model.
+
+6. [2/2] If the landing pad is on top of a circle, then pressing the mouse button on the landing pad should only drag the landing pad.
+
+7. [2/2] Pressing the Undo (or Redo) buttons in ToolbarView will undo (or redo) multiple changes to the landing pad’s position. This is regardless of whether the change was done with a double-click or a drag. The button states should be disabled if undo (or redo) is not possible.
+
+
+8. [2/2] Pressing the Undo (or Redo) button will undo (or redo) multiple changes to terrain circles. The button states should be disabled if undo (or redo) is not possible.
+
+
+9. [2/2] The undo and redo actions should work for a sequence of adjustments to different circles and for adjustment to the landing pad in between adjustments to circles.
+
+
+10. [2/2] The granularity of undo and redo actions should be properly “chunked”.
+
+
+11. [2/2] A ship, rendered as a 10x10 blue square in the game world, is displayed at an initial position of 350,50 in the game world. In the PlayView panel, the game world is scaled by 3 and the ship is always centred (only the game world should move around it). The ship is only visible in PlayView.
+
+
+12. [2/2] The ship is controlled using the keyboard. W,A,S,D keys add thrust to the ship up, left, down, or right. Pressing SPACE should pause or unpause the ship movement . When paused, the thrust keys should have no effect.
+
+
+13. [2/2] The MessageView should display the current fuel and speed of the ship (there are methods in Ship that return exactly these amounts). If the fuel goes below 10, the fuel text should turn RED. If the ship is paused, then “(Paused)” should appear.
+
+
+14. [2/2] The ship should crash if it touches any part of the terrain or it goes beyond the world bounds. When it crashes, the message “CRASH” is shown. Pressing SPACE after a crash restarts the game.
+
+
+15. [2/2] The ship should land if it touches the landing pad with a speed less than the amount returned bymodel.ship.getSafeLandingSpeed(). The speed label is green when the ship speed is “safe”. When it lands, the message “LANDED!” is shown. If the ship touches the landing pad at a speed equal or greater to getSafeLandingSpeed(), then it crashes and the word “CRASH” is shown in message. Pressing SPACE after a landing or a crash restarts the game.
+
+
+## ENHANCEMENT [0/2]
+
+
+## GENERAL [5/5] (can be negative)
